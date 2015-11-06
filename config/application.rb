@@ -22,5 +22,9 @@ module Steward
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    ENV["UBER_SERVER_TOKEN"] = "HAZtwZ8cHLlqllERn0_juiXvMh8Fz9KrDf-Hji3y"
+    ENV["UBER_CLIENT_ID"] = "-zlI-ceplKA1hn2oo4dbVAA1nkRcxVFH"
+    ENV["UBER_CLIENT_SECRET"] = "m4jWrdRTI5o9hgt91rCa-JylEsQuQ0J56aXFCRy8"
   end
 end
