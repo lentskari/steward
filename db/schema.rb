@@ -11,16 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106194331) do
+ActiveRecord::Schema.define(version: 20151106223121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "customers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "email"
     t.string   "name"
+    t.string   "uber_access_token"
+    t.string   "uber_refresh_token"
+    t.datetime "uber_token_expires"
   end
 
   create_table "flight_customers", force: :cascade do |t|
