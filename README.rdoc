@@ -1,28 +1,20 @@
-== README
+== Steward
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+You'll need `postgresql`
+`brew install postgres`
 
-Things you may want to cover:
+To develop: 
+`bundle install``
+`be rake db:setup`
+`be rake db:migrate`
 
-* Ruby version
+Install pow:
+`curl get.pow.cx | sh`
+```bash
+cd ~./pow
+ln -s <<path to steward>>
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Run:
+`rails server``
+Navigate to: `http://steward.dev`
