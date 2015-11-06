@@ -1,4 +1,5 @@
-== Steward
+Steward
+====
 
 You'll need `postgresql`
 `brew install postgres`
@@ -8,7 +9,7 @@ To develop:
 `be rake db:setup`
 `be rake db:migrate`
 
-Install pow:
+Install pow (rack server):
 `curl get.pow.cx | sh`
 ```bash
 cd ~./pow
@@ -16,5 +17,4 @@ ln -s <<path to steward>>
 ```
 
 Run:
-`rails server``
 Navigate to: `http://steward.dev`
