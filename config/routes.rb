@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     end
     resources :flights, :only => [:index, :show, :create]
     resources :flight_customers, :only => [:show]
+
+    get 'journeys/:customer_id', to: "journeys#show"
   end
 
 end
