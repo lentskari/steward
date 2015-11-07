@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
     get 'journeys/:customer_id', to: "journeys#show"
     post 'uber/ride', to: "uber#request_ride"
+    get 'uber/ride/:ride_id', to: "uber#show_ride"
   end
 
 end

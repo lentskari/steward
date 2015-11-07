@@ -13,4 +13,10 @@ class Api::UberController < ApplicationController
   rescue NoUberAvailableError
     render json: { reason: "No Ubers :(" }, status: 404
   end
+
+  def show_ride
+    ride_id = params.require(:ride_id)
+    ride = UberAPI.new.show_ride_details(ride_id)
+    render json: ride
+  end
 end

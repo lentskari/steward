@@ -22,6 +22,11 @@ class UberAPI
     response.body
   end
 
+  def show_ride_details(ride_id)
+    response = sandbox_connection().get("requests/#{ride_id}")
+    response.body
+  end
+
   def authenticate(authorization_code)
     login_connection = Faraday.new(url: "https://login.uber.com/")
     response = login_connection.post("oauth/v2/token", {
