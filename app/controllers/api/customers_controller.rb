@@ -6,6 +6,17 @@ class Api::CustomersController < ApplicationController
   end
 
   def create
+    profile = FinaviaAPI.new.get_profile(params[:member_number])["profile"]
+    basic_info = profile["basicInformation"]
+    customer = Customer.create(
+      member_number: params[:member_number],
+      email: basic_info["email"],
+      name: "#{basic_info["firstName"]} #{basic_info["lastName"]}"
+    )
+    render json: customer
+  end
+
+  def show_flights
   end
 
   def authenticate_to_uber

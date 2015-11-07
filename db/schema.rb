@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107092252) do
+ActiveRecord::Schema.define(version: 20151107102741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20151107092252) do
     t.string   "uber_access_token"
     t.string   "uber_refresh_token"
     t.datetime "uber_token_expires"
+    t.string   "member_number"
   end
 
   create_table "flight_customers", force: :cascade do |t|

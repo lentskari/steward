@@ -26,5 +26,10 @@ module Steward
     ENV["UBER_SERVER_TOKEN"] = "HAZtwZ8cHLlqllERn0_juiXvMh8Fz9KrDf-Hji3y"
     ENV["UBER_CLIENT_ID"] = "-zlI-ceplKA1hn2oo4dbVAA1nkRcxVFH"
     ENV["UBER_CLIENT_SECRET"] = "m4jWrdRTI5o9hgt91rCa-JylEsQuQ0J56aXFCRy8"
+    ENV["FINAVIA_SERVICE_TICKET"] = "ST-JAkQyT0pcqQXqeQ"
+    ENV["FINAVIA_APPID"] = "airplane"
+    ENV["FINAVIA_ACCESS_TOKEN"] = "TGT-iYuy1zFb0P5DISM"
+    ENV["FINAVIA_USERNAME"] = "slush"
+    ENV["FINAVIA_SECRET"] = "f1na350!"
   end
 end

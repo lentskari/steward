@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :api, default: { format: :json },
     constraints: { subdomain: 'api' }, path: '/' do
 
-    resources :customers, :only => [:show] do
+    resources :customers, :only => [:show, :create] do
       post "uber_access", to: "customers#authenticate_to_uber"
     end
     resources :flights, :only => [:index, :show, :create]
