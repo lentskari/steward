@@ -1,4 +1,3 @@
 class Flight < ActiveRecord::Base
-
-  has_many :flight_customers, inverse_of: :flight
+  belongs_to :customer
 end

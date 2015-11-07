@@ -6,13 +6,38 @@ class Api::CustomersController < ApplicationController
   end
 
   def create
-    profile = FinaviaAPI.new.get_profile(params[:member_number])["profile"]
+    finavia_api = FinaviaAPI.new
+    profile = finavia_api.get_profile(params[:member_number])["profile"]
     basic_info = profile["basicInformation"]
+    bookings = profile["bookings"]
     customer = Customer.create(
       member_number: params[:member_number],
       email: basic_info["email"],
-      name: "#{basic_info["firstName"]} #{basic_info["lastName"]}"
+      name: "#{basic_info["firstName"]} #{basic_info["lastName"]}",
     )
+    bookings.each { |booking|
+      Booking.create(
+        pnr: booking["PNR"],
+        customer_id: customer.id
+      )
+      booking_details = finavia_api.get_booking_detail(booking["PNR"])
+      journeys = booking_details["journeys"]
+
+      journeys.each { |journey|
+        flights = journey["flights"]
+        flights.each { |flight|
+          Rails.logger.info flight
+          Flight.create(
+            customer_id: customer.id,
+            arrival_time: flight["arrival"]["estimatedDateTime"],
+            departure_time: flight["departure"]["estimatedDateTime"],
+            origin: flight["departure"]["airport"],
+            destination: flight["arrival"]["airport"]
+          )
+        }
+      }
+    }
+
     render json: customer
   end
 
