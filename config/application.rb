@@ -31,5 +31,6 @@ module Steward
     ENV["FINAVIA_ACCESS_TOKEN"] = "TGT-iYuy1zFb0P5DISM"
     ENV["FINAVIA_USERNAME"] = "slush"
     ENV["FINAVIA_SECRET"] = "f1na350!"
+    ENV["GOOGLE_API_KEY"] = "AIzaSyAc7273eZcadjXezGFnNdjJD-gZEruzdLA"
   end
 end
