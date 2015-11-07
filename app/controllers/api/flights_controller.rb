@@ -19,13 +19,14 @@ class Api::FlightsController < ApplicationController
   end
 
   def create
+    now = Time.zone.now
     api_flight = flight_by_id params[:number]
     flight = Flight.create(
       number: api_flight["flight_number"],
       origin: api_flight["origin_name"],
       destination: api_flight["destination_name"],
-      arrival_time: Time.parse(api_flight["arrival_time"][0..4]),
-      departure_time: Time.parse(api_flight["departure_time"][0..4])
+      arrival_time: Time.zone.parse(api_flight["arrival_time"][0..4], now),
+      departure_time: Time.zone.parse(api_flight["departure_time"][0..4], now)
     )
     render json: flight
   end
