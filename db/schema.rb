@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107111352) do
+ActiveRecord::Schema.define(version: 20151107114547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,7 +60,10 @@ ActiveRecord::Schema.define(version: 20151107111352) do
     t.string   "destination"
     t.datetime "departure_time"
     t.datetime "arrival_time"
+    t.integer  "customer_id"
   end
+
+  add_index "flights", ["customer_id"], name: "index_flights_on_customer_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at", null: false
