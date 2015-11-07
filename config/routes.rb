@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :flight_customers, :only => [:show]
 
     get 'journeys/:customer_id', to: "journeys#show"
+    post 'uber/ride', to: "uber#request_ride"
   end
 
 end

@@ -4,7 +4,7 @@ end
 class UberAPI
   def products(latitude, longitude)
     response = connection.get("products", latitude: latitude, longitude: longitude)
-    JSON.parse(response.body)["products"]
+    JSON.parse(response.body)["products"] || []
   end
 
   def request_ride(locations)
@@ -19,7 +19,7 @@ class UberAPI
       end_latitude: locations[:end_lat],
       end_longitude: locations[:end_lon]
     }.to_json)
-    puts response.body
+    response.body
   end
 
   def authenticate(authorization_code)
