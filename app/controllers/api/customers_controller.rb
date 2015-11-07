@@ -38,7 +38,7 @@ class Api::CustomersController < ApplicationController
       }
     }
 
-    render json: customer
+    render json: customer, include: { flights:  customer["flights"] }
   end
 
   def show_flights
