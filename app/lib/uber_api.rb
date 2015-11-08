@@ -27,9 +27,9 @@ class UberAPI
     response.body
   end
 
-  def test_accept_ride(ride_id)
+  def test_change_status(ride_id, status)
     sandbox_connection().put("sandbox/requests/#{ride_id}", {
-      status: "accepted"
+      status: status
     }.to_json)
   end
 

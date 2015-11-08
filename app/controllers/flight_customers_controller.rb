@@ -1,4 +1,4 @@
-class Api::FlightCustomersController < ApplicationController
+class FlightCustomersController < ApplicationController
 
   def show
     render json: FlightCustomer.find(params[:id])

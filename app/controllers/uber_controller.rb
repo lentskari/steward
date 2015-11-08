@@ -1,4 +1,4 @@
-class Api::UberController < ApplicationController
+class UberController < ApplicationController
   skip_before_filter :verify_authenticity_token
   def request_ride
     start_lat  = params.require(:start_lat)

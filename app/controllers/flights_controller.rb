@@ -1,4 +1,4 @@
-class Api::FlightsController < ApplicationController
+class FlightsController < ApplicationController
   require 'open-uri'
 
   FLIGHTS_URL = "http://www.finnair.fi/portalservices/flightlist"

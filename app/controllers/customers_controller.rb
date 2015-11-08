@@ -1,4 +1,4 @@
-class Api::CustomersController < ApplicationController
+class CustomersController < ApplicationController
   skip_before_filter :verify_authenticity_token # Turning of CSRF because these are used through API
 
   def show

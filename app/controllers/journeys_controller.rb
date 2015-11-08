@@ -1,4 +1,4 @@
-class Api::JourneysController < ApplicationController
+class JourneysController < ApplicationController
   def show
     customer = Customer.find(params.require(:customer_id))
     lat = params.require(:lat)
